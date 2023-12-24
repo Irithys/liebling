@@ -9,7 +9,7 @@
   "Back to home": "返回首页",
   "Email cannot be blank.": "Email 地址不能为空.",
   "Featured": "精选",
-  "Get the latest posts delivered right to your inbox.": "将最新的文章发送到你的收件箱.",
+  "Get the latest posts delivered right to your inbox.": "将最新的文章发送到你的收件箱📧.",
   "Go to the home page": "前往首页",
   "JavaScript license information": "JavaScript license 信息",
   "No posts": "没有文章",
@@ -20,12 +20,12 @@
   "Page": "",
   "Page not found": "未找到页面",
   "Posted by": "作者: ",
-  "Published with": "自豪地使用 ",
+  "Published with": "开心地使用 ",
   "Recent articles": "最近更新",
   "Recommended for you": "向你推荐",
   "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox.": "事不宜迟! 将最新和最好的文章直接发送到你的收件箱.",
   "Subscribe": "订阅",
-  "Subscribe to our newsletter": "订阅我们的新内容",
+  "Subscribe to our newsletter": "😘订阅山茶花舍的新内容",
   "Subscribe to {blogtitle}": "订阅 {blogtitle}",
   "Subscribed!": "订阅成功!",
   "Tags": "标签",
@@ -36,5 +36,6 @@
   "Your email address": "你的 Email 地址",
   "of": " / ",
   "with the email address": "在此邮箱",
-  "with this tag": "包含此标签"
+  "with this tag": "包含此标签",
+  "Member discussion": "包含此标签"
 }

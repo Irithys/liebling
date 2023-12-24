@@ -52,20 +52,24 @@ into the {body} of the default.hbs template --}}
                   <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
                   <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
                 {{/if}}
-                <span class="m-heading__meta__time">{{date published_at}}</span>
+                <span class="m-heading__meta__time">{{date published_at format="YYYY年MM月DD日 HH:mm"}}</span>
               </div>
             </header>
+                    <div class="gh-content gh-canvas">
+                    {{content}}
+               
+        </div>
             <div class="pos-relative js-post-content">
               <div class="m-share">
                 <div class="m-share__content js-sticky">
-                  <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+                  {{!-- <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
                     <span class="icon-facebook" aria-hidden="true"></span>
                   </a>
                   <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
                     class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
-                  </a>
+                  </a> --}}
                   <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
                     <span class="icon-arrow-top" aria-hidden="true"></span>
                     <svg aria-hidden="true">
@@ -74,7 +78,8 @@ into the {body} of the default.hbs template --}}
                   </button>
                 </div>
               </div>
-              {{content}}
+
+
               {{!-- List of tags  --}}
               {{#if tags}}
                 <section class="m-tags in-post">
@@ -140,7 +145,7 @@ into the {body} of the default.hbs template --}}
                     </a>
                   </li>
                 {{/if}}
-                {{#if primary_author.facebook}}
+                {{!-- {{#if primary_author.facebook}}
                   <li>
                     <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
                       <span class="icon-facebook" aria-hidden="true"></span>
@@ -153,19 +158,19 @@ into the {body} of the default.hbs template --}}
                       <span class="icon-twitter" aria-hidden="true"></span>
                     </a>
                   </li>
-                {{/if}}
+                {{/if}} --}}
               </ul>
             </div>
           </div>
         </section>
         {{!-- Native comments --}}
-        {{#if comments}}
+        {{!-- {{#if comments}}
           <div class="m-comments">
             <div class="l-wrapper in-comments js-native-comments">
               {{comments}}
             </div>
           </div>
-        {{/if}}
+        {{/if}} --}}
         {{!-- Third-party comments --}}
         {{!--
           <section class="m-comments">
@@ -174,6 +179,34 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
         --}}
+        <section class="m-comments">
+            <div class="l-wrapper in-comments js-third-party-comments">
+            <div id="waline" ></div>
+            <script src="https://use.sevencdn.com/ajax/libs/waline/2.15.8/waline.min.js"></script>
+            <script>
+              Waline.init({
+                el: "#waline",
+                serverURL: "https://waline.irithys.com/",
+                emoji: [
+                  "https://jsd.onmicrosoft.cn/gh/irithys/cdn@1.0.6/src/emojis/menhera",
+                  "https://jsd.onmicrosoft.cn/gh/irithys/cdn@1.0.6/src/emojis/menhera-Cat",
+                  "https://jsd.onmicrosoft.cn/gh/irithys/cdn@1.0.6/src/emojis/menhera-Valentine",
+                  "https://jsd.onmicrosoft.cn/gh/irithys/cdn@1.0.6/src/emojis/menhera-Witch",
+                  "https://jsd.onmicrosoft.cn/gh/irithys/cdn@1.0.6/src/emojis/bilibili-2233"
+                ],
+                locale: {"admin":"博主","placeholder":"有什么新点子？🎉（上方留下邮箱可以收到通知哦）"},
+                requiredMeta: ["name", "email"],
+                search: false,
+                imageUploader: false,
+                WalineImageUploader: false,
+                dark: 'auto',
+                copyright: false,
+              });
+            </script>
+              <!-- Paste here the provided code snippet -->
+            </div>
+        </section>
+
       {{/post}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
